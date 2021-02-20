@@ -1,0 +1,158 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #607d8b;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    position: relative;
+    top: 50px;
+}
+
+.cup{
+    position: relative;
+    width: 280px;
+    height: 300px;
+    /* CSS gradients let you display smooth transitions between two or more specified colors.
+
+CSS defines two types of gradients:
+
+Linear Gradients (goes down/up/left/right/diagonally)
+Radial Gradients (defined by their center) */
+    background: linear-gradient(to right,#f9f9f9 ,#d9d9d9 );
+    /* w3schools.com/css/css3_gradients.asp */
+    border-bottom-left-radius: 45%;
+    border-bottom-right-radius: 45%;
+}
+
+.top{
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to right,#f9f9f9 ,#d9d9d9 );
+    border-radius: 50%;
+}
+
+.circle{
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: 50px;
+    background: linear-gradient(to left,#f9f9f9,#d9d9d9 );
+    /* background-color: red; */
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.tea{
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,rgba(165, 42, 42, 0.37) ,brown);
+    border-radius: 50%;
+    /* overflow: hidden; */
+}
+
+.handle{
+    position: absolute;
+    right: -70px;
+    top: 35px;
+    border: 25px solid #d9d9d9;
+    height: 180px;
+    width: 160px;
+    border-left: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-radius: 50%;
+    transform: rotate(40deg);
+}
+
+.plate{
+    position: absolute;
+    /* border: 25px solid black; */
+    /* width: 100%; */
+    border-radius: 50%;
+    bottom: -50px;
+    width: 500px;
+    height: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 35px 35px rgba(0,0,0,0.2);
+    background: linear-gradient(to right,#f9f9f9 ,#e7e7e7 );
+}
+
+.plate::before{
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 50%;
+    background: linear-gradient(to right,#f9f9f9 ,#e7e7e7 );
+}
+.plate::after{
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    border-radius: 50%;
+    background: radial-gradient(rgba(0,0,0,0.2) 25%,transparent,transparent);
+}
+
+.vapour{
+    position: relative;
+    display: flex;
+    z-index: 1;
+    padding: 0 20px;
+
+    /* border: 1px solid; */
+}
+
+.vapour span{
+    position:relative;
+    bottom: 50px;
+    display: block;
+    margin: 0 2px 50px;
+    min-width: 8px;
+    height: 120px;
+    background: #ffffff;
+    border-radius: 50%;
+    animation: animate 5s linear infinite;
+    filter: blur(8px);
+    opacity: 0;
+    animation-delay: calc(var(--i)*-0.5s);
+}
+
+@keyframes animate{
+    0%{
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+    }
+    15%{
+        opacity: 1;
+    }
+    50%{
+        transform: translateY(-150px) scaleX(5);
+    }
+    95%{
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(-300px) scaleX(10);
+    }
+}
