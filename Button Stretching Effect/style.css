@@ -1,0 +1,24 @@
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button{
+    height:100px;
+    width: 250px;
+    font-size: 30px;
+    font-family: sans-serif;
+    background: rgb(219, 103, 126);
+    border: 3px solid brown;
+    transition: all 300ms;
+}
+
+.button:hover{
+    height: 120px;
+    width: 300px;
+    border: 7.5px solid brown;
+    font-size: 45px;
+    letter-spacing: 5px;
+}
