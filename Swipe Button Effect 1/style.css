@@ -1,0 +1,41 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button{
+    width: 400px;
+    height: 150px;
+    background: transparent;
+    border: 2px solid black;
+    font-size: 45px;
+    font-family: sans-serif;
+    position: relative;
+    overflow: hidden;
+    transition: color 1s;
+    
+}
+
+.button::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgb(105, 7, 105);
+    position: absolute;
+    z-index: -1;   
+    transform: translateX(-100%);
+    transition: transform 1s;
+}
+
+.button:hover::before{
+    transform: translateX(0);
+}
+
+.button:hover{
+    color: white;
+}
